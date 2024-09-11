@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=League+Spartan:wght@400;500&family=Unbounded:wght@500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+#map-container {
+    margin: 0 auto; /* Center the map container */
+    padding: 0 5vw; 
+    width: 120vh;
+}
+
+#map { 
+    height: 70vh;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#year-slider {
+    width: 100%; /* Make the slider as wide as its parent container */
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+ body {
+     background-color: #7B0438; /* Set your desired background color */
+     margin: 0; /* Remove default body margin */
+     padding: 0; /* Remove default body padding */
+     overflow-x: hidden; /* Prevent horizontal scrolling */
+
+ }
+ 
+.container {
+     display: flex;
+     flex-wrap: wrap; /* Allow content to wrap to the next line if needed */
+     justify-content: center; /* Center the content horizontally */
+     /* padding: 2vw; Add padding around the container */
+     box-sizing: border-box; /* Include padding in the container's total width */
+ }
+
+ .column {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: flex;
+    /*box-sizing: border-box;*/
+  }
+ 
+.column-60 {
+     width: 60%;
+     box-sizing: border-box; /* Include padding in the column's total width */
+ }
+ 
+.column-40 {
+     width: 40%;
+     box-sizing: border-box; /* Include padding in the column's total width */
+ }
+
+ /* image displays */
+ .band-image {
+    width: 100vw;
+    height: 100vh; /* Set the height to viewport height */
+    overflow: hidden; /* Hide any overflow */
+    position: relative;
+  }
+  
+  .band-image img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    display: block;
+    object-fit: cover; /* Cover the container without stretching */
+  }
+
+
+.image-container {
+    position: relative;
+    /* You can add additional styling here for the container if needed */
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* width: 100%; */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the caption */
+    color: #fff; /* Text color for the caption */
+    padding: 10px; /* Padding around the caption text */
+    font-family: "Inconsolata";
+    text-align: center; /* Align caption text to center */
+    font-size: 2vw; /* Font size for the caption text */
+}
+
+.image-text {
+    position: absolute;
+    top: 50%; /* Position at the vertical center */
+    left: 50%; /* Position at the horizontal center */
+    transform: translate(-50%, -50%); /*Center the text exactly */
+    text-align: center;
+    font-family: 'Unbounded', bold;
+    font-size: 8.5vw;
+    line-height: normal;
+    color:#FAD7BF;
+    text-shadow: 2px 2px 4px rgba(56, 56, 56, 0.5); 
+    /*color: #D87541;Text color */
+    background-color: transparent; /* Set the background to transparent */
+    /* white-space: nowrap;  */
+  }
+
+.img2 {
+     width: 100%; /* Make the image fill its container */
+     margin: 2vw 0; /* Adjust margin as needed */
+ }
+ 
+.container img {
+     max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+     height: auto; /* Maintain image aspect ratio */
+     margin-top: 1.5vw;
+ }
+ 
+
+
+/* Override Leaflet's default styles for .leaflet-container */
+.leaflet-container {
+    position: relative; /* Set to relative positioning */
+    z-index: 1; /* Set a higher z-index than the background */
+    /* Add any other styles you want to modify */
+}
+
+
+/*text formatting */
+h1 {
+    font-family: 'Unbounded', bold;
+    font-size: 6.5vw;
+    line-height: normal;
+    color:#FAD7BF;
+    text-align: center;
+    margin: 1.5vw;
+}
+
+h2 {
+    font-family: 'Unbounded', bold;
+    font-size: 2.5vw;
+    line-height: normal;
+    color:#f5a0d3;
+    text-align: center;
+    margin: 1.5vw;
+}
+p {
+    font-family: "Inconsolata";
+    font-size: 2vw;
+    color: white;
+    margin: 2vw;
+    text-align: center;
+}
+
+a {
+    color:#D87541;
+}
+
+/* make nav bar  that always fits length of screen*/
+.web-menu {
+    font-family: 'League Spartan';
+    color: #D87541;
+    font-size: 2.5vw;
+    /* position: sticky; makes nav bar below opening image but remain as u scroll down */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navigation is above other content if needed */
+    margin: 1vw;
+  }
+  
+  .web-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .web-menu li {
+    display: inline;
+  }
+  
+  .web-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #D87541;
+  }
+
+
+/* Map Styling */
+
+.marker-cluster-small {
+	background-color: #F7883F;
+	}
+.marker-cluster-small div {
+	background-color: #f47d2e;
+	}
+
+.marker-cluster-medium {
+	background-color:  #C35C9A;
+	}
+.marker-cluster-medium div {
+	background-color: #c44e95;
+	}
+
+.marker-cluster-large {
+	background-color:  #941b50;
+	}
+.marker-cluster-large div {
+	background-color: #891547;
+}
+
+.leaflet-oldie .marker-cluster-small {
+        background-color: #F7883F;
+        }
+    .leaflet-oldie .marker-cluster-small div {
+        background-color: #f47d2e;
+        }
+    
+    .leaflet-oldie .marker-cluster-medium {
+        background-color: #C35C9A;
+        }
+    .leaflet-oldie .marker-cluster-medium div {
+        background-color: #c44e95;
+        }
+    
+    .leaflet-oldie .marker-cluster-large {
+        background-color: #941b50;
+        }
+    .leaflet-oldie .marker-cluster-large div {
+        background-color: #941b50;
+    }
+
+/* Styles for the hamburger menu icon */
+.hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none; /* Hide the navigation links by default on smaller screens */
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-links.active {
+    display: block; /* Show the links when the menu is toggled */
+    font-family: 'League Spartan';
+    color: #D87541;
+  }
+/* hamburger bar  */
+  .bar {
+    width: 35px;
+    height: 5px;
+    background-color: #D87541;
+    margin: 5px 0;
+  }
+
+/* Responsive layout - designing for mobile devics*/
+@media screen and (max-width: 767px) {
+    @media screen and (max-width: 767px) {
+        .column-60 {
+            width: 100%;
+        }
+    
+        .column-40 {
+            width: 100%;
+        }
+    
+        .web-menu {
+            display: none;
+        }
+    
+        .hamburger-menu {
+            display: block;
+        }
+    
+        .nav-links {
+            /* Remove display: none; or set it to display: block; */
+            padding: 0;
+            list-style: none;
+        }
+    
+        .nav-links.active {
+            display: block;
+            font-family: 'League Spartan';
+            color: #D87541;
+        }
+    
+        .header {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 10px;
+        }
+    
+        .header a :visited {
+            color: #008037;
+        }
+    
+        .header a {
+            color: #D87541;
+        }
+    }
+    
+}
+
+
